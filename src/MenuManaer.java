@@ -10,8 +10,8 @@ public class MenuManaer {
 
 		while (num != 5) {
 			System.out.println("1. Add books"); 
-			System.out.println("2. Delete books");
-			System.out.println("3. Edit books");
+			System.out.println("2. Delete book");
+			System.out.println("3. Edit book");
 			System.out.println("4. View books");
 			System.out.println("5. Exit"); 
 			System.out.print("Select one between 1~5: "); 
@@ -26,7 +26,7 @@ public class MenuManaer {
 				bookManager.editBook();
 			}
 			else if (num==4) {
-				bookManager.viewBook();
+				bookManager.viewBooks();
 			}
 			else {
 				continue;
