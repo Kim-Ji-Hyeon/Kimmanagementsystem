@@ -1,7 +1,9 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import Books.BookKind;
 import Books.HistoryBooks;
+import Books.ScienceBooks;
 import Books.books;
 
 public class BookManager {
@@ -17,23 +19,31 @@ public class BookManager {
 		while (kind != 1 && kind != 2) {
 			System.out.print("1. For History");
 			System.out.print("2. For Science");
-			System.out.print("Select num for Book Kind between 1 and 2: ");	
+			System.out.print("3. For Language");
+
+			System.out.print("Select num for Book Kind between 1,2 or 3: ");	
 			kind = input.nextInt();
 			
 			if (kind == 1) {
-				book = new books();
+				book = new books(BookKind.History);
 				book.getBookInput(input);
 				books.add(book);
 				break;
 			}
 			else if (kind == 2) {
-				book = new HistoryBooks();
+				book = new HistoryBooks(BookKind.Science);
+				book.getBookInput(input);
+				books.add(book);
+				break;
+			}
+			else if (kind == 3) {
+				book = new ScienceBooks(BookKind.Language);
 				book.getBookInput(input);
 				books.add(book);
 				break;
 			}
 			else {
-				System.out.print("Select num for Book Kind between 1 and 2: ");
+				System.out.print("Select num for Book Kind between 1,2 or 3: ");
 			}
 		}
 	}

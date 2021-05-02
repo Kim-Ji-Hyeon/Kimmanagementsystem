@@ -13,12 +13,24 @@ public class books {
 	public books() {
 	}
 	
+	public books(BookKind kind) {
+		this.kind = kind;
+	}
+	
 	public books(String name, int Id) {
 		this.name = name;
 		this.Id = Id;
 	}
 	
 	public books(String name, int Id, String writer, String price) {
+		this.name = name;
+		this.Id = Id;
+		this.writer = writer;
+		this.price = price;
+	}
+	
+	public books(BookKind kind, String name, int Id, String writer, String price) {
+		this.kind = kind;
 		this.name = name;
 		this.Id = Id;
 		this.writer = writer;
@@ -66,7 +78,24 @@ public class books {
 	}
 	
 	public void printInfo() {
-		System.out.println("name: " + name + "Id: " + Id + "Writer: " + writer + "Price: " + price);
+		String skind = "none";
+		switch(this.kind) {
+		case History : 
+			skind = "Hist";
+			break;
+		case Science :
+			skind = "Sci";
+			break;
+		case Language :
+			skind = "Lang";
+			break;
+		case Movie :
+			skind = "Mov";
+			break;
+		default:
+			
+		}
+		System.out.println("kind" + skind + "name: " + name + "Id: " + Id + "Writer: " + writer + "Price: " + price);
 	}
 	
 	public void getBookInput(Scanner input) {

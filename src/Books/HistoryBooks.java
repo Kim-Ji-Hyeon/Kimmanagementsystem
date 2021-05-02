@@ -3,6 +3,10 @@ package Books;
 import java.util.Scanner;
 
 public class HistoryBooks extends books {
+	
+	public HistoryBooks(BookKind kind) {
+		super(kind);
+	}
 
 	public void getBookInput(Scanner input) {
 		System.out.print("Student Id: ");
